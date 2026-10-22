@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-jarvis-bg text-white font-sans antialiased;
+    margin: 0;
+    padding: 0;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-jarvis-surface;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-jarvis-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-jarvis-muted;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-jarvis-card border border-jarvis-border rounded-xl p-4;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-150 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply btn bg-jarvis-accent hover:bg-jarvis-accent-hover text-white;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-jarvis-border text-jarvis-muted hover:text-white;
+  }
+
+  .input {
+    @apply bg-jarvis-surface border border-jarvis-border rounded-lg px-3 py-2 text-sm text-white placeholder-jarvis-muted focus:outline-none focus:border-jarvis-accent transition-colors;
+  }
+
+  .section-title {
+    @apply text-xs font-semibold uppercase tracking-widest text-jarvis-muted mb-3;
+  }
+
+  .urgency-critical {
+    @apply text-red-400 bg-red-400/10;
+  }
+
+  .urgency-warning {
+    @apply text-yellow-400 bg-yellow-400/10;
+  }
+
+  .urgency-ok {
+    @apply text-green-400 bg-green-400/10;
+  }
+}
